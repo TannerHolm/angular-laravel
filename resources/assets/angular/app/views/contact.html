@@ -1,0 +1,27 @@
+<div class="row">
+	<div class="small-12 columns">
+		<p>This is the contact view.</p>
+		
+		<div>
+		  <p>Select a tab by setting active binding to true:</p>
+		  <p>
+		    <button class="button small radius" ng-click="tabs[0].active = true">Select second tab</button>
+		    <button class="button small radius" ng-click="tabs[1].active = true">Select third tab</button>
+		  </p>
+		  <hr />
+		
+		  <tabset>
+		    <tab heading="Static title">Static content</tab>
+		    <tab ng-repeat="tab in tabs" heading="{{tab.title}}" active="tab.active">
+		      {{tab.content}}
+		    </tab>
+		    <tab select="alertMe()">
+		      <tab-heading>
+		        <i class="fa fa-bell"></i> Alert!
+		      </tab-heading>
+		      I've got an HTML heading, and a select callback. Pretty cool!
+		    </tab>
+		  </tabset>
+		</div>
+	</div>
+</div>

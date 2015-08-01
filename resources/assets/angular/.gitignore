@@ -1,0 +1,4 @@
+/bower_components
+/test
+*.DS_Store
+.DS_Store

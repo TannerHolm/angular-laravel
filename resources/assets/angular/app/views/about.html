@@ -1,0 +1,51 @@
+<div class="row">
+	<div class="small-12 columns">
+		<p>This is the about view.</p>
+		
+		<div>
+		  <label class="checkbox">
+		    <input type="checkbox" ng-model="oneAtATime">
+		    Open only one at a time
+		  </label>
+		
+		  <accordion close-others="oneAtATime">
+		    <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+		      {{group.content}}
+		      <a class="right" ng-click="delTab({{group}},{{group.id}})"><i class="fa fa-times-circle"></i></a>
+		    </accordion-group>
+		    <accordion-group heading="Dynamic Body Content">
+		      <p>The body of the accordion group grows to fit the contents</p>
+		        <button class="button small radius" ng-click="addItem()">Add Item</button>
+		        <div ng-repeat="item in items">{{item}}</div>
+		    </accordion-group>
+		    <accordion-group is-open="isopen">
+		        <accordion-heading>
+		            I can have markup, too! <i class="right" ng-class="{'fa fa-chevron-down': isopen, 'fa fa-chevron-right': !isopen}"></i>
+		        </accordion-heading>
+		        This is just some content to illustrate fancy headings.
+		    </accordion-group>
+		  </accordion>
+		  
+		  <hr/>
+		  
+		  <div class="row">
+			  <div class="large-5 medium-8 small-12 small-centered columns">
+				  <form accept-charset="utf-8" ng-submit="addTab()" class="panel radius">
+					  <h5>Add a new tab</h5>
+				  	<div class="title-field">
+				  		<label>Tab Title</label>
+				  		<input name="title" type="text" ng-model="title" class="radius" required>
+				  		<small class="error" ng-show="error">Enter a name for this tab.</small>
+				  	</div>
+				  	<div class="content-field">
+				  		<label>Tab Content</label>
+				  		<input name="content" type="text" ng-model="content" class="radius" required>
+				  		<small class="error" ng-show="error">Add some content to this tab.</small>
+				  	</div>
+				  	<button type="submit" class="small radius expand button">Submit</button>
+				  </form>
+		  	</div>
+			</div>
+		</div>
+	</div>
+</div>

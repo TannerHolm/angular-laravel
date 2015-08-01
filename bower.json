@@ -1,0 +1,23 @@
+{
+  "name": "Angular App",
+  "version": "1.0.0",
+  "description": "Angular via Yeoman and Laravel with Foundation (angular-foundation)",
+  "moduleType": [
+    "globals"
+  ],
+  "authors": [
+    "Zack Warren"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "~4.3.0",
+    "foundation": "~5.5.2"
+  }
+}
